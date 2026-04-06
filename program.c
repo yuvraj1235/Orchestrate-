@@ -13,8 +13,9 @@ int isPrime(int n) {
 }
 
 int main() {
-    int n = 50; // change this value
-
+    int n;  // change this value
+    printf("Enter a number: ");
+    scanf("%d", &n);
     printf("Prime numbers up to %d are:\n", n);
 
     for (int i = 2; i <= n; i++) {
