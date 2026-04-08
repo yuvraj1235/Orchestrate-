@@ -1,0 +1,583 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  43952 17316 ?        Ss   Apr05   0:05 /usr/lib/systemd/systemd --switched-root --system --deserialize=60 rhgb
+root           2  0.0  0.0      0     0 ?        S    Apr05   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    Apr05   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-netns]
+root          10  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/0:0H-events_highpri]
+root          13  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-mm_percpu_wq]
+root          15  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/0]
+root          16  0.0  0.0      0     0 ?        I    Apr05   0:31 [rcu_preempt]
+root          17  0.0  0.0      0     0 ?        S    Apr05   0:00 [rcu_exp_par_gp_kthread_worker/1]
+root          18  0.0  0.0      0     0 ?        S    Apr05   0:00 [rcu_exp_gp_kthread_worker]
+root          19  0.0  0.0      0     0 ?        S    Apr05   0:01 [migration/0]
+root          20  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/0]
+root          21  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/0]
+root          22  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/2]
+root          23  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/2]
+root          24  0.0  0.0      0     0 ?        S    Apr05   0:01 [migration/2]
+root          25  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/2]
+root          27  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/2:0H-events_highpri]
+root          28  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/4]
+root          29  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/4]
+root          30  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/4]
+root          31  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/4]
+root          33  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/4:0H-events_highpri]
+root          34  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/6]
+root          35  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/6]
+root          36  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/6]
+root          37  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/6]
+root          39  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/6:0H-events_highpri]
+root          40  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/8]
+root          41  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/8]
+root          42  0.0  0.0      0     0 ?        S    Apr05   0:02 [migration/8]
+root          43  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/8]
+root          45  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/8:0H-events_highpri]
+root          46  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/10]
+root          47  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/10]
+root          48  0.0  0.0      0     0 ?        S    Apr05   0:01 [migration/10]
+root          49  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/10]
+root          51  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/10:0H-events_highpri]
+root          52  0.0  0.0      0     0 ?        S    Apr05   0:00 [rcu_exp_par_gp_kthread_worker/2]
+root          53  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/12]
+root          54  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/12]
+root          55  0.0  0.0      0     0 ?        S    Apr05   0:04 [migration/12]
+root          56  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/12]
+root          58  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/12:0H-events_highpri]
+root          59  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/13]
+root          60  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/13]
+root          61  0.0  0.0      0     0 ?        S    Apr05   0:02 [migration/13]
+root          62  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/13]
+root          64  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/13:0H-events_highpri]
+root          65  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/14]
+root          66  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/14]
+root          67  0.0  0.0      0     0 ?        S    Apr05   0:02 [migration/14]
+root          68  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/14]
+root          70  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/14:0H-events_highpri]
+root          71  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/15]
+root          72  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/15]
+root          73  0.0  0.0      0     0 ?        S    Apr05   0:01 [migration/15]
+root          74  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/15]
+root          76  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/15:0H-events_highpri]
+root          77  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/16]
+root          78  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/16]
+root          79  0.0  0.0      0     0 ?        S    Apr05   0:01 [migration/16]
+root          80  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/16]
+root          82  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/16:0H-events_highpri]
+root          83  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/17]
+root          84  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/17]
+root          85  0.0  0.0      0     0 ?        S    Apr05   0:01 [migration/17]
+root          86  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/17]
+root          88  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/17:0H-events_highpri]
+root          89  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/18]
+root          90  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/18]
+root          91  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/18]
+root          92  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/18]
+root          94  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/18:0H-events_highpri]
+root          95  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/19]
+root          96  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/19]
+root          97  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/19]
+root          98  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/19]
+root         100  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/19:0H-events_highpri]
+root         101  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/1]
+root         102  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/1]
+root         103  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/1]
+root         104  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/1]
+root         106  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/1:0H-events_highpri]
+root         107  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/3]
+root         108  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/3]
+root         109  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/3]
+root         110  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/3]
+root         112  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/3:0H-events_highpri]
+root         113  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/5]
+root         114  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/5]
+root         115  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/5]
+root         116  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/5]
+root         118  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/5:0H-events_highpri]
+root         119  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/7]
+root         120  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/7]
+root         121  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/7]
+root         122  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/7]
+root         124  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/7:0H-events_highpri]
+root         125  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/9]
+root         126  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/9]
+root         127  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/9]
+root         128  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/9]
+root         130  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/9:0H-events_highpri]
+root         131  0.0  0.0      0     0 ?        S    Apr05   0:00 [cpuhp/11]
+root         132  0.0  0.0      0     0 ?        S    Apr05   0:00 [idle_inject/11]
+root         133  0.0  0.0      0     0 ?        S    Apr05   0:00 [migration/11]
+root         134  0.0  0.0      0     0 ?        S    Apr05   0:00 [ksoftirqd/11]
+root         136  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/11:0H-events_highpri]
+root         137  0.0  0.0      0     0 ?        S    Apr05   0:00 [kdevtmpfs]
+root         138  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-inet_frag_wq]
+root         139  0.0  0.0      0     0 ?        I    Apr05   0:00 [rcu_tasks_kthread]
+root         140  0.0  0.0      0     0 ?        I    Apr05   0:00 [rcu_tasks_rude_kthread]
+root         141  0.0  0.0      0     0 ?        I    Apr05   0:00 [rcu_tasks_trace_kthread]
+root         142  0.0  0.0      0     0 ?        S    Apr05   0:00 [kauditd]
+root         143  0.0  0.0      0     0 ?        S    Apr05   0:00 [oom_reaper]
+root         145  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-writeback]
+root         146  0.0  0.0      0     0 ?        S    Apr05   0:01 [kcompactd0]
+root         147  0.0  0.0      0     0 ?        SN   Apr05   0:00 [ksmd]
+root         148  0.0  0.0      0     0 ?        SN   Apr05   0:01 [khugepaged]
+root         149  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-kblockd]
+root         150  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-blkcg_punt_bio]
+root         152  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-kintegrityd]
+root         153  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/9-acpi]
+root         156  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-tpm_dev_wq]
+root         157  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-ata_sff]
+root         158  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-md_bitmap]
+root         159  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-md]
+root         160  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-edac-poller]
+root         161  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-devfreq_wq]
+root         162  0.0  0.0      0     0 ?        S    Apr05   0:00 [watchdogd]
+root         163  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-quota_events_unbound]
+root         164  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/17:1H-kblockd]
+root         166  0.0  0.0      0     0 ?        S    Apr05   0:09 [kswapd0]
+root         167  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-cryptd]
+root         171  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-kthrotld]
+root         172  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/120-pciehp]
+root         174  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-acpi_thermal_pm]
+root         176  0.0  0.0      0     0 ?        S    Apr05   0:00 [hwrng]
+root         181  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_0]
+root         182  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_0]
+root         183  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_1]
+root         184  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_1]
+root         185  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_2]
+root         186  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_2]
+root         187  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_3]
+root         188  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_3]
+root         189  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_4]
+root         190  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_4]
+root         191  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_5]
+root         192  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_5]
+root         193  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_6]
+root         194  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_6]
+root         195  0.0  0.0      0     0 ?        S    Apr05   0:00 [scsi_eh_7]
+root         196  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-scsi_tmf_7]
+root         204  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-hfi-updates]
+root         205  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-dm_bufio_cache]
+root         207  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-mld]
+root         208  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-ipv6_addrconf]
+root         209  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/8:1H-kblockd]
+root         210  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-kstrp]
+root         296  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/0:1H-kblockd]
+root         300  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/18:1H-kblockd]
+root         302  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/12:1H-kblockd]
+root         303  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/4:1H-kblockd]
+root         344  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/15:1H-kblockd]
+root         347  0.0  0.0      0     0 ?        I<   Apr05   0:01 [kworker/7:1H-kblockd]
+root         348  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/19:1H-kblockd]
+root         352  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/10:1H-kblockd]
+root         363  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/2:1H-kblockd]
+root         369  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/13:1H-kblockd]
+root         371  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/6:1H-kblockd]
+root         390  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/14:1H-kblockd]
+root         440  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/16:1H-i915_cleanup]
+root         478  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/9:1H-events_highpri]
+root         535  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/11:1H-i915_cleanup]
+root         536  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/5:1H-kblockd]
+root         537  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/1:1H-kblockd]
+root         538  0.0  0.0      0     0 ?        I<   Apr05   0:04 [kworker/3:1H-i915_cleanup]
+root         544  0.1  0.0      0     0 ?        S    Apr05   1:01 [irq/132-GXTP5100:00]
+root         556  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-nvme-wq]
+root         557  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-nvme-reset-wq]
+root         558  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-nvme-delete-wq]
+root         559  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-nvme-auth-wq]
+root         562  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-USBC000:00-con1]
+root         574  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-worker]
+root         575  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-delalloc]
+root         576  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-flush_delalloc]
+root         577  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-cache]
+root         578  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-fixup]
+root         579  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-endio]
+root         580  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-endio-meta]
+root         581  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-rmw]
+root         582  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-endio-write]
+root         583  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-freespace-write]
+root         584  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-delayed-meta]
+root         585  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-btrfs-qgroup-rescan]
+root         586  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-ttm]
+root         587  0.0  0.0      0     0 ?        S    Apr05   0:00 [btrfs-cleaner]
+root         588  0.0  0.0      0     0 ?        S    Apr05   0:27 [btrfs-transaction]
+root         614  0.0  0.0      0     0 ?        S    Apr05   0:00 [card1-crtc0]
+root         615  0.0  0.0      0     0 ?        S    Apr05   0:00 [card1-crtc1]
+root         616  0.0  0.0      0     0 ?        S    Apr05   0:00 [card1-crtc2]
+root         617  0.0  0.0      0     0 ?        S    Apr05   0:00 [card1-crtc3]
+root         672  0.0  0.0      0     0 ?        S    Apr05   0:00 [psimon]
+root         683  0.0  0.5 208380 85716 ?        Ss   Apr05   0:06 /usr/lib/systemd/systemd-journald
+root         713  0.0  0.0  16612  6780 ?        Ss   Apr05   0:00 /usr/lib/systemd/systemd-userdbd
+root         731  0.0  0.0  42316 11208 ?        Ss   Apr05   0:01 /usr/lib/systemd/systemd-udevd
+root         736  0.0  0.0      0     0 ?        S    Apr05   0:00 [psimon]
+root         861  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-cfg80211]
+root         892  0.0  0.0      0     0 ?        S    Apr05   0:05 [irq/156-iwlwifi:default_queue]
+root         893  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/157-iwlwifi:queue_1]
+root         894  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/158-iwlwifi:queue_2]
+root         895  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/159-iwlwifi:queue_3]
+root         896  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/160-iwlwifi:queue_4]
+root         897  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/161-iwlwifi:queue_5]
+root         898  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/162-iwlwifi:queue_6]
+root         899  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/163-iwlwifi:queue_7]
+root         900  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/164-iwlwifi:queue_8]
+root         901  0.0  0.0      0     0 ?        S    Apr05   0:00 [nv_queue]
+root         902  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/165-iwlwifi:queue_9]
+root         903  0.0  0.0      0     0 ?        S    Apr05   0:00 [nv_queue]
+root         904  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/166-iwlwifi:queue_10]
+root         905  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/167-iwlwifi:queue_11]
+root         906  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/168-iwlwifi:queue_12]
+root         907  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/169-iwlwifi:queue_13]
+root         908  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/170-iwlwifi:queue_14]
+root         909  0.0  0.0      0     0 ?        S    Apr05   0:00 [nv_open_q]
+root         910  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/171-iwlwifi:exception]
+root         938  0.0  0.0      0     0 ?        S    Apr05   0:00 [nvidia-modeset/kthread_q]
+root         939  0.0  0.0      0     0 ?        S    Apr05   0:00 [nvidia-modeset/deferred_close_kthread_q]
+root         944  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/16-processor_thermal_device_pci]
+root        1084  0.0  0.0      0     0 ?        S    Apr05   0:00 [jbd2/nvme0n1p6-8]
+root        1085  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-ext4-rsv-conversion]
+systemd+    1173  0.0  0.0  17344  8016 ?        Ss   Apr05   0:24 /usr/lib/systemd/systemd-oomd
+systemd+    1174  0.0  0.1  24188 16784 ?        Ss   Apr05   0:07 /usr/lib/systemd/systemd-resolved
+root        1175  0.0  0.0  20976  3520 ?        S<sl Apr05   0:00 /usr/bin/auditd
+dbus        1206  0.0  0.0   9632  4936 ?        Ss   Apr05   0:00 /usr/bin/dbus-broker-launch --scope system --audit
+dbus        1207  0.0  0.0  10256  8392 ?        S    Apr05   0:03 dbus-broker --log 10 --controller 9 --machine-id 13facde82a574414b20cddf3a34e86e2 --max-bytes 536870912 --max-fds 4096 --max-matches 131072 --audit
+root        1208  0.0  0.0      0     0 ?        S    Apr05   0:00 [irq/174-nvidia]
+root        1210  0.0  0.0      0     0 ?        S    Apr05   0:00 [nv_queue]
+avahi       1216  0.0  0.0   6848  5072 ?        Ss   Apr05   0:04 avahi-daemon: running [YuvLUX.local]
+root        1217  0.0  0.0   9628  6296 ?        Ss   Apr05   0:00 /usr/libexec/bluetooth/bluetoothd
+gnome-r+    1222  0.0  0.1 534480 23884 ?        Ssl  Apr05   0:00 /usr/libexec/gnome-remote-desktop-daemon --system
+root        1227  0.0  0.0  81032  4388 ?        Ssl  Apr05   0:03 /usr/sbin/irqbalance
+chrony      1234  0.0  0.0  86424  6800 ?        Ss   Apr05   0:00 /usr/sbin/chronyd -n -F 2
+root        1238  0.0  0.0 303040  5908 ?        SLsl Apr05   0:00 /usr/libexec/low-memory-monitor
+root        1239  0.0  0.0   3208  2164 ?        Ss   Apr05   0:00 /usr/sbin/mcelog --daemon --foreground
+root        1240  0.0  0.0 305752  7956 ?        Ssl  Apr05   0:12 /usr/bin/nvidia-powerd
+polkitd     1241  0.0  0.0 385628 14368 ?        Ssl  Apr05   0:04 /usr/lib/polkit-1/polkitd --no-debug --log-level=notice
+rtkit       1242  0.0  0.0  21728  3440 ?        SNsl Apr05   0:00 /usr/libexec/rtkit-daemon
+root        1245  0.0  0.0   9684  6116 ?        Ss   Apr05   0:00 /usr/bin/smartd -n -q never --capabilities=mail
+root        1246  0.0  0.0 534236  8944 ?        Ssl  Apr05   0:00 /usr/libexec/accounts-daemon
+root        1247  0.0  0.0 531576  7356 ?        Ssl  Apr05   0:00 /usr/libexec/switcheroo-control
+root        1250  0.0  0.0  17456  8812 ?        Ss   Apr05   0:00 /usr/lib/systemd/systemd-homed
+root        1252  0.0  0.0  20180 11856 ?        Ss   Apr05   0:04 /usr/lib/systemd/systemd-logind
+root        1253  0.0  0.0  17244  8308 ?        Ss   Apr05   0:01 /usr/lib/systemd/systemd-machined
+root        1254  0.0  0.0 610668 10032 ?        Ssl  Apr05   0:03 /usr/bin/thermald --systemd --dbus-enable --adaptive
+root        1255  0.0  0.0 617492 15276 ?        Ssl  Apr05   0:00 /usr/libexec/udisks2/udisksd
+root        1262  0.0  0.0 543308 12756 ?        Ssl  Apr05   0:04 /usr/libexec/upowerd
+root        1264  0.1  0.1 4305568 23364 ?       Ssl  Apr05   1:24 /bin/warp-svc
+avahi       1281  0.0  0.0   6448  1628 ?        S    Apr05   0:00 avahi-daemon: chroot helper
+root        1306  0.0  0.0      0     0 ?        S    Apr05   0:00 [psimon]
+root        1307  0.0  0.0      0     0 ?        S    Apr05   0:00 [psimon]
+root        1313  0.0  0.0   4924  3332 ?        SNs  Apr05   0:00 /usr/sbin/alsactl -s -n 19 -c -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --initfile=/lib/alsa/init/00main rdaemon
+root        1316  0.0  0.0 553660 14652 ?        Ssl  Apr05   0:00 /usr/sbin/abrtd -d -s
+root        1405  0.0  0.0 391400 13752 ?        Ssl  Apr05   0:00 /usr/bin/ModemManager
+root        1412  0.0  0.1 373392 32112 ?        Ssl  Apr05   0:00 /usr/bin/python3 -sP /usr/bin/firewalld --nofork --nopid
+root        1437  0.0  0.3 1123800 58040 ?       Ss   Apr05   0:00 /usr/bin/abrt-dump-journal-core -D -T -f -e
+root        1438  0.0  0.2 1120928 32828 ?       Ss   Apr05   0:00 /usr/bin/abrt-dump-journal-oops -fxtD
+root        1439  0.0  0.2 1120364 44836 ?       Ss   Apr05   0:01 /usr/bin/abrt-dump-journal-xorg -fxtD
+root        1494  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-rpciod]
+root        1495  0.0  0.0      0     0 ?        I<   Apr05   0:00 [kworker/R-xprtiod]
+root        1515  0.0  0.1 560480 23868 ?        Ssl  Apr05   0:08 /usr/bin/NetworkManager --no-daemon
+root        1538  0.0  0.0  16792 11284 ?        Ss   Apr05   0:01 /usr/sbin/wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -u -s
+root        1558  0.0  0.0 253444 12588 ?        Ss   Apr05   0:00 /usr/bin/cupsd -l
+root        1559  0.0  0.0 282400  8356 ?        Ssl  Apr05   0:00 /usr/bin/gssproxy -i
+root        1561  0.0  0.0   2900  1708 ?        Ss   Apr05   0:00 /bin/sh /snap/cups/1170/scripts/run-cups-browsed
+root        1562  0.0  0.0   2900  1852 ?        Ss   Apr05   0:00 /bin/sh /snap/cups/1170/scripts/run-cupsd
+root        1564  0.0  0.0   8940  6540 ?        Ss   Apr05   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root        1566  0.0  0.1 499820 32048 ?        Ssl  Apr05   0:05 /usr/bin/python3 -Es /usr/sbin/tuned -l -P
+root        1593  0.0  0.0 2382736 14600 ?       Ssl  Apr05   0:26 /usr/bin/containerd
+colord      1611  0.0  0.0 538716 13156 ?        Ssl  Apr05   0:00 /usr/libexec/colord
+mysql       1691  0.2  0.1 2214140 25948 ?       Ssl  Apr05   2:29 /usr/libexec/mysqld --basedir=/usr
+lp          1692  0.0  0.0  21740  8732 ?        S    Apr05   0:00 /usr/lib/cups/notifier/dbus dbus://
+lp          1693  0.0  0.0  21740  8720 ?        S    Apr05   0:00 /usr/lib/cups/notifier/dbus dbus://
+root        1701  0.0  0.1 498328 29804 ?        Ssl  Apr05   0:02 /usr/bin/python3 -Es /usr/sbin/tuned-ppd -l
+root        1846  0.0  0.0  61796 10060 ?        S    Apr05   0:00 cupsd -f -s /var/snap/cups/common/etc/cups/cups-files.conf -c /var/snap/cups/common/etc/cups/cupsd.conf
+root        1847  0.0  0.0 241708  8208 ?        Sl   Apr05   0:00 cups-proxyd /var/snap/cups/common/run/cups.sock /run/cups/cups.sock -l --logdir /var/snap/cups/1170/var/log
+root        1871  0.0  0.0   2900   984 ?        S    Apr05   0:00 /bin/sh /snap/cups/1170/scripts/run-cups-browsed
+root        1930  0.0  0.1 2517728 24892 ?       Ssl  Apr05   0:04 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root        1933  0.0  0.3 1018144 50044 ?       Ssl  Apr05   0:11 /usr/sbin/rsyslogd -n
+root        1942  0.0  0.0   5124  3308 ?        Ss   Apr05   0:00 /usr/sbin/atd -f
+root        1943  0.0  0.0 232572  4008 ?        Ss   Apr05   0:00 /usr/sbin/crond -n
+root        1944  0.0  0.0 683044 10852 ?        Ssl  Apr05   0:00 /usr/bin/gdm
+postgres    1956  0.0  0.1 441252 18776 ?        Ss   Apr05   0:00 /usr/pgsql-15/bin/postmaster -D /var/lib/pgsql/15/data/
+postgres    1985  0.0  0.0 295204  2892 ?        Ss   Apr05   0:00 postgres: logger 
+postgres    1991  0.0  0.0 441400  5188 ?        Ss   Apr05   0:00 postgres: checkpointer 
+postgres    1992  0.0  0.0 441384  4176 ?        Ss   Apr05   0:00 postgres: background writer 
+postgres    2000  0.0  0.0 441384  7288 ?        Ss   Apr05   0:00 postgres: walwriter 
+postgres    2001  0.0  0.0 442872  4348 ?        Ss   Apr05   0:00 postgres: autovacuum launcher 
+postgres    2002  0.0  0.0 442852  3968 ?        Ss   Apr05   0:00 postgres: logical replication launcher 
+root        2024  0.0  0.0 306180  7548 ?        Ssl  Apr05   0:00 /usr/libexec/uresourced
+root        2456  0.0  0.0      0     0 ?        S<   Apr05   0:00 [krfcommd]
+root        2669  0.0  0.0 838584  8928 ?        Ssl  Apr05   0:00 /usr/bin/pcscd --foreground --auto-exit
+geoclue     2700  0.0  0.1 2503296 29792 ?       Ssl  Apr05   0:05 /usr/libexec/geoclue
+root        3850  0.0  0.0      0     0 ?        S    Apr05   0:00 [UVM global queue]
+root        3851  0.0  0.0      0     0 ?        S    Apr05   0:00 [UVM deferred release queue]
+root        3852  0.0  0.0      0     0 ?        S    Apr05   0:00 [UVM Tools Event Queue]
+yuvlux      4244  0.0  0.1  26184 16340 ?        Ss   Apr05   0:03 /usr/lib/systemd/systemd --user
+yuvlux      4247  0.0  0.0  16796  1932 ?        S    Apr05   0:00 (sd-pam)
+yuvlux      5101  0.0  0.1 355872 20248 ?        S<sl Apr05   0:54 /usr/bin/pipewire-pulse
+root        5305  0.0  0.0 554176 14620 ?        Ssl  Apr05   0:00 /usr/sbin/abrt-dbus -t133
+root       11862  0.0  0.0 618740 14532 ?        Sl   Apr05   0:00 gdm-session-worker [pam/gdm-password]
+yuvlux     12192  0.0  0.0 407336  7464 ?        Sl   Apr05   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+yuvlux     12356  0.0  0.0 391676  6284 tty2     Ssl+ Apr05   0:00 /usr/libexec/gdm-wayland-session /usr/bin/gnome-session
+yuvlux     12374  0.0  0.0   9100  4404 ?        Ss   Apr05   0:00 /usr/bin/dbus-broker-launch --scope user
+yuvlux     12380  0.0  0.0   8140  6076 ?        S    Apr05   0:03 dbus-broker --log 10 --controller 9 --machine-id 13facde82a574414b20cddf3a34e86e2 --max-bytes 100000000000000 --max-fds 25000000000000 --max-matches 5000000000
+yuvlux     12383  0.0  0.0 163832  6120 tty2     Sl+  Apr05   0:00 /usr/libexec/gnome-session-init-worker gnome
+yuvlux     12470  0.0  0.7 5682884 116856 ?      SLsl Apr05   0:00 /usr/libexec/gnome-remote-desktop-daemon
+yuvlux     12471  0.0  0.0 311804  5788 ?        Ssl  Apr05   0:00 /usr/libexec/gnome-session-ctl --monitor
+yuvlux     12472  0.0  0.0 382096  9824 ?        Ssl  Apr05   0:00 /usr/libexec/uresourced --user
+yuvlux     12479  0.0  0.0 765600 11268 ?        Ssl  Apr05   0:01 /usr/libexec/gnome-session-service --session=gnome
+yuvlux     12480  0.0  0.0 540116  8960 ?        Ssl  Apr05   0:00 /usr/libexec/gvfsd
+yuvlux     12489  0.0  0.0 613632  6756 ?        Sl   Apr05   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+yuvlux     12507  0.0  0.0 537952  8440 ?        Ssl  Apr05   0:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+yuvlux     12508  2.8  2.4 13658784 386396 ?     Ssl  Apr05  26:15 /usr/bin/gnome-shell
+yuvlux     12509  0.0  0.0 336712 13788 ?        S<sl Apr05   0:23 /usr/bin/pipewire
+yuvlux     12510  0.0  0.1 1010372 27048 ?       S<sl Apr05   0:35 /usr/bin/wireplumber
+root       12557  0.0  0.0      0     0 ?        S    Apr05   0:00 [nvidia-drm/timeline-88]
+yuvlux     12586  0.0  0.0 380972  7844 ?        Ssl  Apr05   0:00 /usr/libexec/at-spi-bus-launcher
+yuvlux     12592  0.0  0.0   8972  4232 ?        S    Apr05   0:00 /usr/bin/dbus-broker-launch --config-file=/usr/share/defaults/at-spi2/accessibility.conf --scope user
+yuvlux     12593  0.0  0.0   5204  3232 ?        S    Apr05   0:00 dbus-broker --log 10 --controller 9 --machine-id 13facde82a574414b20cddf3a34e86e2 --max-bytes 100000000000000 --max-fds 6400000 --max-matches 5000000000
+yuvlux     12594  0.0  0.0 168428  7932 ?        Ssl  Apr05   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+yuvlux     12603  0.0  0.0 531556  7336 ?        Ssl  Apr05   0:00 /usr/libexec/xdg-permission-store
+yuvlux     12621  0.0  0.1 816280 23748 ?        Ssl  Apr05   0:00 /usr/libexec/gnome-shell-calendar-server
+yuvlux     12625  0.0  0.0 164648  6864 ?        Ssl  Apr05   0:00 /usr/libexec/dconf-service
+yuvlux     12632  0.0  0.2 1654952 47884 ?       Ssl  Apr05   0:00 /usr/libexec/evolution-source-registry
+yuvlux     12644  0.0  0.0 392804  7684 ?        Ssl  Apr05   0:04 /usr/libexec/gvfsd-metadata
+yuvlux     12675  0.0  0.1 1256948 17020 ?       Ssl  Apr05   0:00 /usr/libexec/xdg-desktop-portal
+yuvlux     12676  0.0  0.3 910928 53820 ?        SLsl Apr05   0:00 /usr/libexec/goa-daemon
+yuvlux     12686  0.0  0.2 1885760 42800 ?       Ssl  Apr05   0:01 /usr/libexec/evolution-calendar-factory
+yuvlux     12689  0.0  0.1 2983140 27748 ?       Ssl  Apr05   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+yuvlux     12690  0.0  0.0 1054484 8952 ?        Ssl  Apr05   0:00 /usr/libexec/xdg-document-portal
+yuvlux     12700  0.0  0.0 612328 10728 ?        Ssl  Apr05   0:36 /usr/bin/ibus-daemon --panel disable
+yuvlux     12702  0.0  0.0 478708 10852 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-a11y-settings
+root       12704  0.0  0.0   2588  2144 ?        Ss   Apr05   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+yuvlux     12705  0.0  0.0 617188 11132 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-color
+yuvlux     12706  0.0  0.0 490284 13644 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-datetime
+yuvlux     12712  0.0  0.0 617076 11384 ?        Ssl  Apr05   0:01 /usr/libexec/gsd-housekeeping
+yuvlux     12716  0.0  0.0 606624  7864 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-keyboard
+yuvlux     12725  0.0  0.0 763436 15116 ?        Ssl  Apr05   0:01 /usr/libexec/gsd-media-keys
+yuvlux     12728  0.0  0.1 906856 26308 ?        Sl   Apr05   0:03 /usr/local/bin/vicinae server --replace
+yuvlux     12729  0.0  0.0 762024 14532 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-power
+yuvlux     12741  0.0  0.0 559300 15204 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-print-notifications
+yuvlux     12746  0.0  0.0 606708  8004 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-rfkill
+yuvlux     12754  0.0  0.0 393400  7532 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-screensaver-proxy
+yuvlux     12760  0.0  0.0 314532  9604 ?        Sl   Apr05   0:00 /usr/libexec/gsd-disk-utility-notify
+yuvlux     12767  0.0  0.0 625872 12644 ?        Ssl  Apr05   0:02 /usr/libexec/gsd-sharing
+yuvlux     12778  0.0  0.0 616700 12688 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-smartcard
+yuvlux     12788  0.0  0.0 473388 10380 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-sound
+yuvlux     12795  0.0  0.0 698268 10136 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-usb-protection
+yuvlux     12801  0.0  0.0 617876 11384 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-wwan
+yuvlux     12806  0.0  0.2 4033432 42276 ?       Sl   Apr05   0:19 /usr/bin/warp-taskbar
+yuvlux     12899  0.0  0.0 466496  6836 ?        Sl   Apr05   0:00 /usr/libexec/ibus-dconf
+yuvlux     12901  0.0  0.1 732692 23020 ?        Sl   Apr05   0:07 /usr/libexec/ibus-extension-gtk3
+yuvlux     12932  0.0  0.0 632240 14516 ?        Sl   Apr05   0:00 /usr/libexec/gsd-printer
+yuvlux     12967  0.0  0.0 531940  7640 ?        Ssl  Apr05   0:00 /usr/libexec/ibus-portal
+yuvlux     12970  0.0  0.1 512808 20924 ?        Ssl  Apr05   0:00 /usr/bin/abrt-applet --gapplication-service
+yuvlux     12971  0.0  0.0 620084 10892 ?        Ssl  Apr05   0:01 /usr/libexec/goa-identity-service
+yuvlux     12972  0.0  0.1 2982144 27452 ?       Ssl  Apr05   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+yuvlux     12974  0.0  0.2 1073364 42312 ?       Ssl  Apr05   0:00 /usr/libexec/evolution-addressbook-factory
+yuvlux     12975  0.0  0.1 1166028 25780 ?       SNsl Apr05   0:03 /usr/libexec/localsearch-3
+yuvlux     12979  0.0  0.3 1280744 59500 ?       Ssl  Apr05   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+yuvlux     12981  0.0  1.2 2166588 196884 ?      Ssl  Apr05   0:37 /usr/bin/gnome-software --gapplication-service
+yuvlux     12983  0.0  0.0 122260 10052 ?        Ss   Apr05   0:00 /usr/local/bin/vicinae server --replace
+yuvlux     12985  0.0  0.8 1703772 143076 ?      Ssl  Apr05   0:02 /usr/libexec/xdg-desktop-portal-gnome
+yuvlux     13012  0.0  0.0 622544 15068 ?        Ssl  Apr05   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+yuvlux     13064  0.0  0.0 531556  7060 ?        Ssl  Apr05   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+yuvlux     13082  0.0  0.0 533440  7476 ?        Ssl  Apr05   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+yuvlux     13091  0.0  0.0 531868  7404 ?        Ssl  Apr05   0:00 /usr/libexec/gvfs-goa-volume-monitor
+yuvlux     13100  0.0  0.0 612536  8520 ?        Ssl  Apr05   0:00 /usr/libexec/gvfs-afc-volume-monitor
+yuvlux     13148  0.0  0.0 392744  7576 ?        Sl   Apr05   0:12 /usr/libexec/ibus-engine-simple
+root       13257  0.0  0.0      0     0 ?        S    Apr05   0:00 [vidmem lazy free]
+root       13394  0.0  0.0      0     0 ?        S    Apr05   0:00 [UVM GPU1 BH]
+root       13395  0.0  0.0      0     0 ?        S    Apr05   0:00 [UVM GPU1 KC]
+root       14373  0.0  0.0      0     0 ?        S    Apr05   0:00 [nvidia-drm/timeline-91]
+yuvlux     14383  0.0  0.0 1015024 4496 ?        Sl   Apr05   0:00 /usr/local/bin/vicinae-node /run/user/1000/vicinae/extension-manager.js
+yuvlux     14403  0.0  0.1 726584 28936 ?        Ssl  Apr05   0:00 /usr/libexec/xdg-desktop-portal-gtk
+yuvlux     14627  0.0  0.0   3748  2240 ?        S    Apr05   0:00 /usr/bin/bwrap --args 44 -- /app/bin/chrome
+yuvlux     14698  0.0  0.0 531408  7028 ?        Ssl  Apr05   0:00 /usr/libexec/flatpak-session-helper
+yuvlux     14703  0.0  0.0   4232   768 ?        Ss   Apr05   0:00 server --sh -n /run/user/1000/.flatpak-helper/pkcs11-flatpak-14698 --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+yuvlux     14706  0.0  0.0   3748  2052 ?        S    Apr05   0:00 /usr/bin/bwrap --args 44 -- /usr/bin/xdg-dbus-proxy --args=47
+yuvlux     14707  0.0  0.0 457224  6036 ?        Sl   Apr05   0:00 /usr/bin/xdg-dbus-proxy --args=47
+yuvlux     14711  0.0  0.0   3848  1440 ?        S    Apr05   0:00 /usr/bin/bwrap --args 44 -- /app/bin/chrome
+yuvlux     14712  2.9  3.1 51480280 503104 ?     Sl   Apr05  26:45 /app/extra/chrome --disable-features=WebAssemblyTrapHandler,DesktopPWAsRunOnOsLogin
+yuvlux     14722  0.0  0.0 554104 15780 ?        Ssl  Apr05   0:00 /usr/libexec/flatpak-portal
+yuvlux     14739  0.0  0.0 50354888 2428 ?       Sl   Apr05   0:00 /app/extra/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/yuvlux/.var/app/com.google.Chrome/config/google-chrome/Crash Reports --metrics-dir=/home/yuvlux/.var/app/com.google.Chrome/config/google-chrome --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Freedesktop SDK 25.08 (Flatpak runtime) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=146.0.7680.177 --initial-client-fd=10 --shared-client-connection
+yuvlux     14741  0.0  0.0 50345652 2232 ?       Sl   Apr05   0:00 /app/extra/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/yuvlux/.var/app/com.google.Chrome/config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Freedesktop SDK 25.08 (Flatpak runtime) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=146.0.7680.177 --initial-client-fd=4 --shared-client-connection
+yuvlux     14746  0.0  0.3 50999120 49820 ?      S    Apr05   0:00 /app/extra/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     14748  0.0  0.0      0     0 ?        Z    Apr05   0:00 [zypak-sandbox] <defunct>
+yuvlux     14750  0.0  0.0   5872  1844 ?        S    Apr05   0:00 cat
+yuvlux     14751  0.0  0.0   5872  1884 ?        S    Apr05   0:00 cat
+yuvlux     14752  0.0  0.0   3748  2256 ?        Ss   Apr05   0:00 /usr/bin/bwrap --args 45 -- /app/bin/zypak-helper child - /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     14768  0.0  0.0   3844  1520 ?        S    Apr05   0:00 /usr/bin/bwrap --args 45 -- /app/bin/zypak-helper child - /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     14769  0.0  0.3 51001908 55476 ?      S    Apr05   0:02 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     14800  1.9  1.1 51576268 177048 ?     Sl   Apr05  18:22 /app/extra/chrome --type=gpu-process --ozone-platform=wayland --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAYAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --metrics-shmem-handle=4,i,16503787585839104533,369945767467446487,262144 --field-trial-handle=3,i,18082208298216342648,1428907073799810106,262144 --disable-features=DesktopPWAsRunOnOsLogin,EyeDropper,WebAssemblyTrapHandler --variations-seed-version=20260405-030043.742000-production --pseudonymization-salt-handle=7,i,14689301399032357992,12925654367458437225,4 --trace-process-track-uuid=3190708988185955192
+yuvlux     14805  0.5  0.9 50884516 148756 ?     Sl   Apr05   4:44 /app/extra/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,15967436286131624654,6248556492866436222,524288 --field-trial-handle=3,i,18082208298216342648,1428907073799810106,262144 --disable-features=DesktopPWAsRunOnOsLogin,EyeDropper,WebAssemblyTrapHandler --variations-seed-version=20260405-030043.742000-production --pseudonymization-salt-handle=7,i,14689301399032357992,12925654367458437225,4 --trace-process-track-uuid=3190708989122997041
+yuvlux     14808  0.0  0.4 460500 79332 ?        Sl   Apr05   0:04 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.WTWKN3 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients -enable-ei-portal
+yuvlux     14816  0.0  0.3 51078576 55952 ?      Sl   Apr05   0:05 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     14860  0.0  0.0 476152 13524 ?        Ssl  Apr05   0:00 /usr/libexec/gsd-xsettings
+yuvlux     14882  0.0  0.6 1249856 106156 ?      Sl   Apr05   0:01 /usr/libexec/mutter-x11-frames
+yuvlux     14904  0.0  0.3 469344 49872 ?        Sl   Apr05   0:00 /usr/libexec/ibus-x11
+yuvlux     14951  0.7  2.4 1462104832 400596 ?   Sl   Apr05   6:38 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     15026  0.0  0.1  21312 17320 ?        S    Apr05   0:02 p11-kit-remote --provider p11-kit-trust.so pkcs11:model=p11-kit-trust?write-protected=yes
+yuvlux     15063  0.0  0.7 1460119020 119136 ?   Sl   Apr05   0:01 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     15217  0.7  2.4 1466085920 393224 ?   Sl   Apr05   6:34 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     15264  0.0  0.6 1459989964 103816 ?   Sl   Apr05   0:01 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     15284  0.0  1.6 1460157132 265864 ?   Sl   Apr05   0:15 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     15314  0.0  1.5 1460188564 256336 ?   Sl   Apr05   0:12 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     16094  0.4  1.9 1462134768 310848 ?   Sl   Apr05   4:20 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     16112  0.1  0.5 50834996 85052 ?      Sl   Apr05   1:39 /app/extra/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,8968487995426828362,16190220466046603279,524288 --field-trial-handle=3,i,18082208298216342648,1428907073799810106,262144 --disable-features=DesktopPWAsRunOnOsLogin,EyeDropper,WebAssemblyTrapHandler --variations-seed-version=20260405-030043.742000-production --pseudonymization-salt-handle=7,i,14689301399032357992,12925654367458437225,4 --trace-process-track-uuid=3190709023793545454
+yuvlux     16327  0.0  0.8 1460122116 142680 ?   Sl   Apr05   0:05 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     16643  0.0  0.3 1632400 58448 ?       Ssl  Apr05   0:00 /usr/bin/gnome-calendar --gapplication-service
+yuvlux     16649  0.0  0.1 392120 26260 ?        Ssl  Apr05   0:00 /usr/lib64/firefox/firefox --dbus-service /usr/bin/firefox
+yuvlux     16677  0.0  0.0 761696 10632 ?        Sl   Apr05   0:00 /usr/libexec/gvfsd-trash --spawner :1.7 /org/gtk/gvfs/exec_spaw/0
+yuvlux     16718  0.0  0.0  47680  8320 ?        Ss   Apr05   0:00 /usr/libexec/bluetooth/obexd
+yuvlux     16721  0.0  0.0 148736  2544 ?        Sl   Apr05   0:00 /usr/lib64/firefox/crashhelper 16649 9 /tmp/ 11
+yuvlux     16732  0.2  1.5 1460188556 248432 ?   Sl   Apr05   1:55 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     17247  0.0  0.0   3748  2176 ?        S    Apr05   0:00 bwrap --unshare-all --die-with-parent --chdir / --ro-bind /usr /usr --dev /dev --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /nix/store /nix/store --tmpfs /tmp-home --tmpfs /tmp-run --clearenv --setenv HOME /tmp-home --setenv XDG_RUNTIME_DIR /tmp-run --setenv XDG_RUNTIME_DIR /run/user/1000 --symlink /usr/lib /lib --symlink /usr/lib64 /lib64 --seccomp 55 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 54
+yuvlux     17248  0.0  0.0   3748  1236 ?        S    Apr05   0:00 bwrap --unshare-all --die-with-parent --chdir / --ro-bind /usr /usr --dev /dev --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /nix/store /nix/store --tmpfs /tmp-home --tmpfs /tmp-run --clearenv --setenv HOME /tmp-home --setenv XDG_RUNTIME_DIR /tmp-run --setenv XDG_RUNTIME_DIR /run/user/1000 --symlink /usr/lib /lib --symlink /usr/lib64 /lib64 --seccomp 55 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 54
+yuvlux     17249  0.0  0.0 144004  5736 ?        Sl   Apr05   0:00 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 54
+yuvlux     18440  0.0  1.2 1462122856 202648 ?   Sl   Apr05   0:12 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     18553  0.0  0.7 1460121216 118504 ?   Sl   Apr05   0:01 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     18606  0.0  0.8 1460123116 139832 ?   Sl   Apr05   0:03 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     18624  0.0  0.6 1462031964 108164 ?   Sl   Apr05   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     18676  0.0  0.2 626968 46320 ?        Sl   Apr05   0:00 /usr/bin/python3 /usr/share/ibus-typing-booster/engine/main.py --ibus
+yuvlux     24648  0.0  0.0 616024 11612 ?        Sl   Apr05   0:00 /usr/libexec/gvfsd-recent --spawner :1.7 /org/gtk/gvfs/exec_spaw/1
+yuvlux     24670  0.0  0.0 614696 10040 ?        Sl   Apr05   0:00 /usr/libexec/gvfsd-network --spawner :1.7 /org/gtk/gvfs/exec_spaw/2
+yuvlux     24677  0.0  0.0 616728 10180 ?        Sl   Apr05   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.7 /org/gtk/gvfs/exec_spaw/3
+yuvlux     24683  0.0  0.0 615468 11236 ?        Sl   Apr05   0:00 /usr/libexec/gvfsd-wsdd --spawner :1.7 /org/gtk/gvfs/exec_spaw/4
+yuvlux     24688  0.0  0.1 269560 25232 ?        S    Apr05   0:01 /usr/bin/python3 /usr/bin/wsdd --no-host --discovery --listen /run/user/1000/gvfsd/wsdd
+yuvlux     33752  0.4  2.3 1468042624 369740 ?   Sl   Apr05   3:42 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     58513  2.5  5.4 1487939380 881256 ?   Sl   Apr05  20:38 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     88676  0.0  0.0   3748  2320 ?        S    Apr05   0:00 bwrap --unshare-all --die-with-parent --chdir / --ro-bind /usr /usr --dev /dev --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /nix/store /nix/store --tmpfs /tmp-home --tmpfs /tmp-run --clearenv --setenv HOME /tmp-home --setenv XDG_RUNTIME_DIR /tmp-run --setenv XDG_RUNTIME_DIR /run/user/1000 --symlink /usr/lib /lib --symlink /usr/lib64 /lib64 --seccomp 230 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 229
+yuvlux     88678  0.0  0.0   3748  1440 ?        S    Apr05   0:00 bwrap --unshare-all --die-with-parent --chdir / --ro-bind /usr /usr --dev /dev --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /nix/store /nix/store --tmpfs /tmp-home --tmpfs /tmp-run --clearenv --setenv HOME /tmp-home --setenv XDG_RUNTIME_DIR /tmp-run --setenv XDG_RUNTIME_DIR /run/user/1000 --symlink /usr/lib /lib --symlink /usr/lib64 /lib64 --seccomp 230 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 229
+yuvlux     88679  0.0  0.0 144004  7436 ?        Sl   Apr05   0:00 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 229
+yuvlux     94234  0.8  1.6 1461919216 270524 ?   SLsl 07:13   2:09 /usr/share/code/code .
+yuvlux     94241  0.0  0.3 51073284 52596 ?      S    07:13   0:00 /usr/share/code/code --type=zygote --no-zygote-sandbox
+yuvlux     94242  0.0  0.3 34296060 52672 ?      S    07:13   0:00 /usr/share/code/code --type=zygote
+yuvlux     94244  0.0  0.0 34296084 12940 ?      S    07:13   0:00 /usr/share/code/code --type=zygote
+yuvlux     94261  0.0  0.0 50353280 3660 ?       Sl   07:14   0:00 /usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/yuvlux/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=bd410c1c-c71d-49aa-a5a7-844e46429356&iid=bd410c1c-c71d-49aa-a5a7-844e46429356&sid=bd410c1c-c71d-49aa-a5a7-844e46429356 --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.113.0 --annotation=lsb-release=Fedora Linux 43 (Workstation Edition) --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=39.8.3 --initial-client-fd=48 --shared-client-connection
+yuvlux     94418  1.6  1.1 51603340 191728 ?     Sl   07:14   4:00 /usr/share/code/code --type=zygote --no-zygote-sandbox
+yuvlux     94426  0.0  0.5 34166968 81948 ?      Sl   07:14   0:07 /proc/self/exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708989122997041
+yuvlux     94877  0.1  0.8 1461561268 140024 ?   Sl   07:14   0:18 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708990997080739
+yuvlux     95129  0.3  0.7 1461594732 126828 ?   Sl   07:14   0:49 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708993808206286
+yuvlux     95753  0.1  1.4 1462111392 225564 ?   Sl   07:14   0:21 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux     99999  0.3  1.6 1462138016 259612 ?   Sl   07:18   0:47 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      114320  0.0  0.0      0     0 ?        I    07:41   0:00 [kworker/15:1-events]
+yuvlux    114792  0.0  1.0 1460134496 165396 ?   Sl   07:41   0:05 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux    115347  0.0  0.8 1462014272 129552 ?   Sl   07:42   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      120663  0.0  0.0      0     0 ?        I    07:52   0:00 [kworker/19:1-mm_percpu_wq]
+root      123919  0.0  0.0      0     0 ?        I    08:58   0:00 [kworker/1:2-cgroup_release]
+root      124580  0.0  0.0      0     0 ?        S    09:10   0:00 [irq/133-mei_me]
+root      124637  0.0  0.0      0     0 ?        I    09:10   0:00 [kworker/6:3-events]
+root      124640  0.0  0.0      0     0 ?        S    09:10   0:00 [nvidia]
+sssd      124729  0.0  0.0 247624  9116 ?        Ss   09:10   0:00 /usr/libexec/sssd/sssd_kcm --logger=files
+yuvlux    145839  6.6  2.3 1460177656 377752 ?   Sl   09:39   6:45 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      148342  0.0  0.0      0     0 ?        I    09:42   0:03 [kworker/u80:14-btrfs-endio]
+root      159492  0.0  0.0      0     0 ?        I    09:57   0:00 [kworker/0:1-mm_percpu_wq]
+root      166482  0.0  0.0      0     0 ?        I    10:04   0:02 [kworker/u80:17-events_unbound]
+root      172670  0.0  0.3 594412 50128 ?        Ssl  10:10   0:00 /usr/libexec/fwupd/fwupd
+yuvlux    177787  0.4  1.5 4356664 254784 ?      Ssl  10:14   0:16 /usr/bin/nautilus --gapplication-service
+yuvlux    179396  1.7  2.2 1461959480 358552 ?   Sl   10:15   1:09 /usr/share/code/code --type=zygote
+yuvlux    179440  0.0  0.7 1461577900 112740 ?   Sl   10:15   0:03 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708995682289984
+yuvlux    179467  1.0  3.1 1480462924 506544 ?   Sl   10:15   0:39 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708996619331833
+yuvlux    181771  0.1  0.3  99272 50916 ?        Sl   10:16   0:04 /home/yuvlux/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64/bin/cpptools
+root      189206  0.0  0.0      0     0 ?        I    10:25   0:02 [kworker/u80:6-btrfs-endio-write]
+yuvlux    191100  1.5  2.1 1461943028 341804 ?   Sl   10:26   0:51 /usr/share/code/code --type=zygote
+yuvlux    191429  0.0  0.7 1461569704 113312 ?   Sl   10:26   0:02 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708998493415531
+yuvlux    191444  0.8  3.1 1478754860 509940 ?   Sl   10:26   0:28 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190708999430457380
+yuvlux    194432  0.1  0.3  98532 49512 ?        Sl   10:29   0:03 /home/yuvlux/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64/bin/cpptools
+root      196545  0.0  0.0      0     0 ?        I    10:31   0:01 [kworker/u80:15-btrfs-endio-write]
+root      198783  0.0  0.0      0     0 ?        I    10:34   0:00 [kworker/18:0-events]
+root      200673  0.0  0.0      0     0 ?        I    10:35   0:00 [kworker/12:2-events]
+root      200847  0.0  0.0      0     0 ?        I    10:35   0:00 [kworker/2:0-events]
+root      201185  0.0  0.0      0     0 ?        I    10:36   0:00 [kworker/16:1-events]
+root      204659  0.0  0.0      0     0 ?        I    10:40   0:00 [kworker/13:1-events]
+root      204660  0.0  0.0      0     0 ?        I    10:40   0:00 [kworker/17:0-mm_percpu_wq]
+yuvlux    206833  0.8  1.4 1462097756 230544 ?   Sl   10:43   0:20 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      207404  0.0  0.0      0     0 ?        I    10:44   0:01 [kworker/u80:0-btrfs-endio]
+root      209119  0.0  0.0      0     0 ?        I    10:45   0:00 [kworker/10:2-events]
+root      211119  0.0  0.0      0     0 ?        I    10:48   0:00 [kworker/19:0-mm_percpu_wq]
+yuvlux    212148  0.0  0.0   3748  2316 ?        S    10:49   0:00 bwrap --unshare-all --die-with-parent --chdir / --ro-bind /usr /usr --dev /dev --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /nix/store /nix/store --tmpfs /tmp-home --tmpfs /tmp-run --clearenv --setenv HOME /tmp-home --setenv XDG_RUNTIME_DIR /tmp-run --setenv XDG_RUNTIME_DIR /run/user/1000 --symlink /usr/lib /lib --symlink /usr/lib64 /lib64 --seccomp 83 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 82
+yuvlux    212149  0.0  0.0   3748  1432 ?        S    10:49   0:00 bwrap --unshare-all --die-with-parent --chdir / --ro-bind /usr /usr --dev /dev --ro-bind-try /etc/ld.so.cache /etc/ld.so.cache --ro-bind-try /nix/store /nix/store --tmpfs /tmp-home --tmpfs /tmp-run --clearenv --setenv HOME /tmp-home --setenv XDG_RUNTIME_DIR /tmp-run --setenv XDG_RUNTIME_DIR /run/user/1000 --symlink /usr/lib /lib --symlink /usr/lib64 /lib64 --seccomp 83 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 82
+yuvlux    212150  0.0  0.0 144004  6596 ?        Sl   10:49   0:00 /usr/libexec/glycin-loaders/2+/glycin-image-rs --dbus-fd 82
+yuvlux    212480  0.2  0.8 1462094732 138284 ?   Sl   10:49   0:04 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      212515  0.0  0.0      0     0 ?        I    10:49   0:00 [kworker/0:2-events]
+root      213686  0.0  0.0   3220  1964 ?        S    10:50   0:00 sleep 3600
+root      213820  0.0  0.0      0     0 ?        I    10:50   0:00 [kworker/3:1-events]
+root      214334  0.0  0.0      0     0 ?        I    10:50   0:00 [kworker/15:0-mm_percpu_wq]
+root      214336  0.0  0.0      0     0 ?        I    10:50   0:00 [kworker/14:2-events]
+yuvlux    215082  0.0  0.1 4245056 25488 ?       Sl   10:50   0:00 /home/yuvlux/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64/bin/cpptools-srv 194432 {04F0509A-6FA5-4A44-9C88-849CA2171596}
+yuvlux    215085  0.0  0.1 4245112 26184 ?       Sl   10:50   0:00 /home/yuvlux/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64/bin/cpptools-srv 181771 {76EE7174-7EF0-47D3-8DF3-E4F0BCC04E66}
+root      215196  0.0  0.0      0     0 ?        I    10:50   0:00 [kworker/18:1-events]
+root      215628  0.0  0.0      0     0 ?        I    10:50   0:00 [kworker/13:0-mm_percpu_wq]
+root      219146  0.0  0.0      0     0 ?        I    10:52   0:00 [kworker/u80:8-btrfs-endio]
+root      219150  0.0  0.0      0     0 ?        I    10:52   0:01 [kworker/u80:18-btrfs-endio-write]
+root      219151  0.0  0.0      0     0 ?        I    10:52   0:00 [kworker/7:0-mm_percpu_wq]
+root      219152  0.0  0.0      0     0 ?        I    10:52   0:00 [kworker/u80:19-btrfs-endio]
+root      219795  0.0  0.0      0     0 ?        I    10:52   0:00 [kworker/4:2-events]
+yuvlux    222862  1.3  1.8 1460232112 299812 ?   Sl   10:54   0:21 /usr/share/code/code --type=zygote
+yuvlux    222878  0.1  0.6 1478355116 106720 ?   Sl   10:54   0:01 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190709009737917719
+yuvlux    222905  0.7  2.6 1478754860 426404 ?   Sl   10:54   0:12 /proc/self/exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --js-flags=--nodecommit_pooled_pages --crashpad-handler-pid=94261 --enable-crash-reporter=aac8dc7b-8b79-4e40-b156-668f35d9719e,no_channel --user-data-dir=/home/yuvlux/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9878991011760497167,13019995721631251826,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --trace-process-track-uuid=3190709010674959568
+root      225229  0.1  0.0      0     0 ?        I<   10:56   0:01 [kworker/u81:2-i915_flip]
+root      225612  0.0  0.0      0     0 ?        I    10:57   0:00 [kworker/6:1-events]
+root      227511  0.0  0.0      0     0 ?        I    10:57   0:00 [kworker/2:1-events]
+root      229741  0.0  0.0      0     0 ?        I    10:59   0:00 [kworker/17:2-mm_percpu_wq]
+root      230647  0.0  0.0      0     0 ?        I    10:59   0:00 [kworker/u80:2-btrfs-endio]
+root      232989  0.0  0.0      0     0 ?        I    11:00   0:00 [kworker/12:1-events]
+yuvlux    238467  0.0  0.0 237848  9836 pts/0    Ss+  11:02   0:00 /usr/bin/zsh -i
+yuvlux    238513  0.0  0.0 235252  4692 pts/0    S    11:02   0:00 /usr/bin/zsh -i
+yuvlux    238560  0.0  0.0 237260  6432 pts/0    S    11:02   0:00 /usr/bin/zsh -i
+yuvlux    238561  0.0  0.0 237244  6092 pts/0    S    11:02   0:00 /usr/bin/zsh -i
+yuvlux    238563  0.0  0.0   6916  2328 pts/0    Sl   11:02   0:00 /home/yuvlux/.cache/gitstatus/gitstatusd-linux-x86_64 -G v1.5.4 -s -1 -u -1 -d -1 -c -1 -m -1 -v FATAL -t 32
+root      239067  0.0  0.0      0     0 ?        I    11:02   0:00 [kworker/11:3-mm_percpu_wq]
+yuvlux    239298  0.0  0.0 237820  9676 pts/1    Ss   11:02   0:00 /usr/bin/zsh -i
+yuvlux    239354  0.0  0.0 235236  4700 pts/1    S    11:02   0:00 /usr/bin/zsh -i
+yuvlux    239385  0.0  0.0 237260  6336 pts/1    S    11:02   0:00 /usr/bin/zsh -i
+yuvlux    239386  0.0  0.0 237244  5996 pts/1    S    11:02   0:00 /usr/bin/zsh -i
+yuvlux    239388  0.0  0.0   6952  2224 pts/1    Sl   11:02   0:00 /home/yuvlux/.cache/gitstatus/gitstatusd-linux-x86_64 -G v1.5.4 -s -1 -u -1 -d -1 -c -1 -m -1 -v FATAL -t 32
+root      239645  0.0  0.0      0     0 ?        I    11:02   0:00 [kworker/9:2-events]
+root      239868  0.0  0.0      0     0 ?        I    11:03   0:00 [kworker/10:1-mm_percpu_wq]
+root      240852  0.0  0.0      0     0 ?        I    11:03   0:00 [kworker/1:1-mm_percpu_wq]
+root      242532  0.0  0.0      0     0 ?        I    11:04   0:00 [kworker/8:1-events]
+yuvlux    242830  0.1  0.0 237752  9860 pts/2    Ss+  11:04   0:01 /usr/bin/zsh -i
+yuvlux    242913  0.0  0.0 237052  6128 pts/2    S    11:04   0:00 /usr/bin/zsh -i
+yuvlux    242915  0.0  0.0 237036  5780 pts/2    S    11:04   0:00 /usr/bin/zsh -i
+yuvlux    242917  0.0  0.0 237128  6512 pts/2    S    11:04   0:00 /usr/bin/zsh -i
+yuvlux    242922  0.0  0.0   6940  2276 pts/2    Sl   11:04   0:00 /home/yuvlux/.cache/gitstatus/gitstatusd-linux-x86_64 -G v1.5.4 -s -1 -u -1 -d -1 -c -1 -m -1 -v FATAL -t 32
+root      243551  0.0  0.0      0     0 ?        I    11:04   0:00 [kworker/3:2-events]
+yuvlux    244283  0.0  0.1 4244924 23532 ?       Sl   11:05   0:00 /home/yuvlux/.vscode/extensions/ms-vscode.cpptools-1.31.4-linux-x64/bin/cpptools-srv 181771 {BACE5888-CEE6-4EDE-B8A1-64344E0742A7}
+root      244952  0.0  0.0      0     0 ?        I    11:05   0:00 [kworker/u80:4-btrfs-endio]
+root      244953  0.0  0.0      0     0 ?        I    11:05   0:00 [kworker/u80:5-btrfs-endio]
+root      245996  0.0  0.0      0     0 ?        I    11:06   0:00 [kworker/5:0-events]
+root      248386  0.0  0.0      0     0 ?        I    11:08   0:00 [kworker/16:3-i915-unordered]
+root      249950  0.0  0.0      0     0 ?        I    11:10   0:00 [kworker/4:1]
+root      250413  0.0  0.0      0     0 ?        I    11:10   0:00 [kworker/14:1-events]
+root      250561  0.0  0.0      0     0 ?        I    11:10   0:00 [kworker/11:0-events]
+root      251758  0.0  0.0      0     0 ?        I<   11:12   0:00 [kworker/u81:1-rb_allocator]
+root      251925  0.0  0.0      0     0 ?        I    11:12   0:00 [kworker/5:2-events]
+yuvlux    252582  0.0  0.0   2576  1828 pts/1    S+   11:12   0:00 ./server
+root      253272  0.0  0.0      0     0 ?        I    11:12   0:00 [kworker/8:0-events]
+root      253298  0.0  0.0      0     0 ?        I    11:12   0:00 [kworker/0:0]
+root      253581  0.0  0.0      0     0 ?        I    11:13   0:00 [kworker/9:0-events]
+root      253716  0.0  0.0      0     0 ?        I    11:13   0:00 [kworker/7:1-events]
+yuvlux    256991  0.0  0.5 1461955336 95208 ?    Sl   11:15   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux    257004  0.0  0.6 1461958352 102384 ?   Sl   11:15   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      257310  0.0  0.0      0     0 ?        I    11:16   0:00 [kworker/u80:1-btrfs-endio-write]
+root      257379  0.0  0.0      0     0 ?        I    11:16   0:00 [kworker/11:1-events]
+root      257611  0.0  0.0  17072  7756 ?        S    11:16   0:00 systemd-userwork: waiting...
+root      258008  0.0  0.0  17072  7684 ?        S    11:16   0:00 systemd-userwork: waiting...
+root      258730  0.0  0.0      0     0 ?        I    11:17   0:00 [kworker/5:1-mm_percpu_wq]
+root      259030  0.0  0.0      0     0 ?        I<   11:17   0:00 [kworker/u81:0-rb_allocator]
+root      259222  0.0  0.0      0     0 ?        I    11:18   0:00 [kworker/3:0-mm_percpu_wq]
+root      259309  0.0  0.0  17072  7652 ?        S    11:18   0:00 systemd-userwork: waiting...
+root      259399  0.0  0.0      0     0 ?        I    11:18   0:00 [kworker/u80:3-btrfs-endio]
+yuvlux    259859  0.0  0.4 1459972736 70652 ?    Sl   11:18   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+root      259992  0.1  0.0      0     0 ?        I    11:18   0:00 [kworker/u80:7-events_unbound]
+root      260297  0.0  0.0      0     0 ?        I    11:19   0:00 [kworker/9:1-events]
+root      262299  0.0  0.0      0     0 ?        I    11:20   0:00 [kworker/17:1]
+yuvlux    262485  0.1  0.5 1461947012 89684 ?    Sl   11:20   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux    262654  0.1  0.5 1461947012 87448 ?    Sl   11:21   0:00 /app/extra/chrome --type=zygote --crashpad-handler-pid=18 --enable-crash-reporter=285e6b22-ae6d-49fa-8fc5-2caff9085fd1, --change-stack-guard-on-fork=enable
+yuvlux    263015  0.0  0.0   2576  1572 pts/1    S+   11:21   0:00 ./server
+yuvlux    263017  0.0  0.0 232028  3920 pts/1    S+   11:21   0:00 sh -c -- ./server_logs/received_263015.out > server_logs/output_1775454686_pid263015.txt 2>&1
+yuvlux    263018  0.0  0.0   2436  1556 pts/1    S+   11:21   0:00 ./server_logs/received_263015.out
+yuvlux    263019  0.0  0.0 232028  3844 pts/1    S+   11:21   0:00 sh -c -- ps aux >> demo.txt
+yuvlux    263020  0.0  0.0 234912  5164 pts/1    R+   11:21   0:00 ps aux
