@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoadBalancer CLI Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #00ff88;
+    --green-dim: #00cc66;
+    --green-dark: #003311;
+    --amber: #ffaa00;
+    --red: #ff3355;
+    --cyan: #00ddff;
+    --bg: #050f08;
+    --panel: #0a1a0f;
+    --panel2: #0d2015;
+    --border: #003322;
+    --border2: #00ff8833;
+    --text: #88ccaa;
+    --text-dim: #446655;
+  }
+
+  body { background: var(--bg); }
+
+  #root {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--bg);
+    color: var(--green);
+    padding: 16px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #scanline {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,136,0.015) 2px, rgba(0,255,136,0.015) 4px);
+    pointer-events: none; z-index: 10;
+    animation: scan 8s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { background-position-y: 0; }
+    100% { background-position-y: 40px; }
+  }
+
+  #vignette {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none; z-index: 9;
+  }
+
+  .header {
+    border: 1px solid var(--border2);
+    background: var(--panel);
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green), var(--cyan), var(--green), transparent);
+    animation: headerPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes headerPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--green);
+    text-shadow: 0 0 10px var(--green);
+  }
+
+  .logo span { color: var(--cyan); }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+    animation: blink 1.4s ease-in-out infinite;
+    margin-right: 5px;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .grid-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .panel {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: 12px;
+    position: relative;
+  }
+
+  .panel::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border2), transparent);
+  }
+
+  .panel-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .panel-title .icon { color: var(--cyan); font-size: 10px; }
+
+  .metric-big {
+    font-family: 'Orbitron', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green);
+    text-shadow: 0 0 15px rgba(0,255,136,0.4);
+    line-height: 1;
+  }
+
+  .metric-sub { font-size: 10px; color: var(--text-dim); margin-top: 4px; letter-spacing: 1px; }
+  .metric-delta { font-size: 11px; color: var(--green-dim); margin-top: 6px; }
+
+  .worker-card {
+    border: 1px solid var(--border);
+    background: var(--panel2);
+    padding: 10px;
+    margin-bottom: 8px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+
+  .worker-card.active { border-color: var(--green-dim); }
+  .worker-card.warn   { border-color: var(--amber); }
+  .worker-card.danger { border-color: var(--red); }
+  .worker-card.offline { border-color: var(--text-dim); opacity: 0.5; }
+
+  .worker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .worker-ip { font-size: 12px; color: var(--cyan); letter-spacing: 1px; }
+
+  .worker-badge {
+    font-size: 9px;
+    padding: 2px 7px;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', monospace;
+  }
+
+  .badge-online  { color: var(--green);    border: 1px solid var(--green); }
+  .badge-busy    { color: var(--amber);    border: 1px solid var(--amber); }
+  .badge-crit    { color: var(--red);      border: 1px solid var(--red); }
+  .badge-offline { color: var(--text-dim); border: 1px solid var(--text-dim); }
+
+  .load-bar-bg {
+    height: 6px;
+    background: var(--green-dark);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .load-bar-fill {
+    height: 100%;
+    transition: width 0.8s cubic-bezier(0.4,0,0.2,1), background 0.3s;
+    position: relative;
+  }
+
+  .load-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 3px; height: 100%;
+    background: white;
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+
+  .bar-green { background: linear-gradient(90deg, #004422, var(--green)); }
+  .bar-amber { background: linear-gradient(90deg, #443300, var(--amber)); }
+  .bar-red   { background: linear-gradient(90deg, #440011, var(--red)); }
+
+  .worker-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  .worker-load-num { color: var(--green); font-size: 11px; }
+
+  .log-panel {
+    height: 160px;
+    overflow-y: auto;
+    font-size: 11px;
+    line-height: 1.8;
+    padding-right: 4px;
+  }
+
+  .log-panel::-webkit-scrollbar { width: 3px; }
+  .log-panel::-webkit-scrollbar-track { background: var(--bg); }
+  .log-panel::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .log-line {
+    display: flex;
+    gap: 8px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateX(-4px); } to { opacity: 1; } }
+
+  .log-time { color: var(--text-dim); min-width: 60px; }
+
+  .log-tag {
+    min-width: 55px;
+    text-align: center;
+    font-size: 9px;
+    padding: 1px 0;
+    font-family: 'Orbitron', monospace;
+  }
+
+  .tag-info { color: var(--cyan); }
+  .tag-ok   { color: var(--green); }
+  .tag-warn { color: var(--amber); }
+  .tag-err  { color: var(--red); }
+  .log-msg  { color: var(--text); flex: 1; }
+
+  .thread-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .thread-dot {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .td-idle   { background: var(--green-dark); border: 1px solid var(--border); }
+  .td-active { background: var(--green); box-shadow: 0 0 6px var(--green); animation: threadPulse 0.8s ease-in-out infinite; }
+  .td-busy   { background: var(--amber); box-shadow: 0 0 4px var(--amber); }
+
+  @keyframes threadPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+  .conn-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .conn-line:last-child { border-bottom: none; }
+
+  .conn-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .cs-active { background: var(--green); box-shadow: 0 0 4px var(--green); }
+  .cs-wait   { background: var(--amber); }
+  .cs-done   { background: var(--text-dim); }
+
+  .conn-ip     { color: var(--cyan); min-width: 100px; font-size: 10px; }
+  .conn-arrow  { color: var(--text-dim); }
+  .conn-worker { color: var(--green-dim); }
+  .conn-size   { color: var(--text-dim); margin-left: auto; font-size: 10px; }
+
+  .btn-row { display: flex; gap: 8px; margin-top: 10px; }
+
+  .cli-btn {
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--green-dim);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    padding: 5px 12px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+
+  .cli-btn:hover {
+    background: rgba(0,255,136,0.08);
+    color: var(--green);
+    border-color: var(--green);
+    box-shadow: 0 0 8px rgba(0,255,136,0.2);
+  }
+
+  .cli-btn:active { transform: scale(0.97); }
+
+  .uptime-counter { font-family: 'Orbitron', monospace; font-size: 11px; color: var(--text-dim); }
+  .uptime-val { color: var(--green-dim); }
+
+  .mini-chart {
+    display: flex;
+    align-items: flex-end;
+    height: 40px;
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .chart-bar {
+    flex: 1;
+    background: var(--green-dark);
+    border-top: 1px solid var(--green-dim);
+    transition: height 0.5s ease;
+    min-height: 2px;
+  }
+
+  .chart-bar.recent { border-top-color: var(--green); background: rgba(0,255,136,0.15); }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin: 8px 0;
+  }
+
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .network-visual {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    gap: 4px;
+  }
+
+  .net-node { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+  .net-icon {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    position: relative;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0;
+  }
+
+  .net-icon.pulse::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border: 1px solid var(--green);
+    opacity: 0;
+    animation: ripple 2s ease-out infinite;
+  }
+
+  @keyframes ripple {
+    0%   { inset: -2px;  opacity: 0.6; }
+    100% { inset: -10px; opacity: 0; }
+  }
+
+  .net-line { flex: 1; display: flex; flex-direction: column; gap: 3px; align-items: center; }
+  .net-label { font-size: 9px; color: var(--text-dim); letter-spacing: 1px; font-family: 'Orbitron', monospace; }
+
+  .flow-dots { display: flex; gap: 3px; align-items: center; }
+
+  .flow-dot {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--green);
+    animation: flow 1.5s linear infinite;
+    opacity: 0;
+  }
+
+  .flow-dot:nth-child(1) { animation-delay: 0s; }
+  .flow-dot:nth-child(2) { animation-delay: 0.3s; }
+  .flow-dot:nth-child(3) { animation-delay: 0.6s; }
+  .flow-dot:nth-child(4) { animation-delay: 0.9s; }
+  .flow-dot:nth-child(5) { animation-delay: 1.2s; }
+
+  @keyframes flow { 0%{opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{opacity:0} }
+
+  .corner-tl, .corner-tr, .corner-bl, .corner-br {
+    position: absolute;
+    width: 6px; height: 6px;
+    border-color: var(--green-dim);
+    border-style: solid;
+  }
+  .corner-tl { top:0; left:0;  border-width: 1px 0 0 1px; }
+  .corner-tr { top:0; right:0; border-width: 1px 1px 0 0; }
+  .corner-bl { bottom:0; left:0;  border-width: 0 0 1px 1px; }
+  .corner-br { bottom:0; right:0; border-width: 0 1px 1px 0; }
+</style>
+</head>
+<body>
+<div id="root">
+  <div id="scanline"></div>
+  <div id="vignette"></div>
+
+  <div class="header">
+    <div class="corner-tl"></div><div class="corner-tr"></div>
+    <div class="corner-bl"></div><div class="corner-br"></div>
+    <div>
+      <div class="logo">LOAD<span>BALANCER</span> v2.1</div>
+      <div style="font-size:9px;color:var(--text-dim);letter-spacing:2px;margin-top:3px;">DISPATCHER / THREAD MANAGER / WORKER COORDINATOR</div>
+    </div>
+    <div class="header-right">
+      <span><span class="status-dot"></span>SYSTEM NOMINAL</span>
+      <span class="uptime-counter">UPTIME: <span class="uptime-val" id="uptime">00:00:00</span></span>
+      <span id="clock" style="color:var(--cyan);font-size:12px;font-family:'Orbitron',monospace;"></span>
+    </div>
+  </div>
+
+  <div class="grid-main">
+    <div class="panel">
+      <div class="panel-title"><span class="icon">◈</span> REQUESTS HANDLED</div>
+      <div class="metric-big" id="req-count">0</div>
+      <div class="metric-sub">TOTAL DISPATCHED</div>
+      <div class="metric-delta" id="req-rate">+0 REQ/S</div>
+      <div class="mini-chart" id="req-chart"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">◈</span> ACTIVE THREADS</div>
+      <div class="metric-big" id="thread-count">0</div>
+      <div class="metric-sub">OF 10 MAX</div>
+      <div class="divider">THREAD MAP</div>
+      <div class="thread-grid" id="thread-grid"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">◈</span> AVG RESPONSE</div>
+      <div class="metric-big" id="avg-ms">---<span style="font-size:14px;color:var(--text-dim)">ms</span></div>
+      <div class="metric-sub">LATENCY P50</div>
+      <div class="metric-delta" id="p99-ms">P99: --- ms</div>
+      <div class="mini-chart" id="lat-chart"></div>
+    </div>
+  </div>
+
+  <div class="grid-bottom">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+      <div class="panel">
+        <div class="panel-title"><span class="icon">◈</span> WORKER NODES</div>
+        <div id="worker-cards"></div>
+        <div class="btn-row">
+          <button class="cli-btn" onclick="addWorkerEvent()">+ ADD NODE</button>
+          <button class="cli-btn" onclick="stressTest()">&#9889; STRESS</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title"><span class="icon">◈</span> NETWORK TOPOLOGY</div>
+        <div class="network-visual" id="net-visual"></div>
+        <div class="divider">LIVE CONNECTIONS</div>
+        <div id="conn-list" style="max-height:100px;overflow:hidden;"></div>
+      </div>
+
+    </div>
+
+    <div class="panel">
+      <div class="panel-title"><span class="icon">◈</span> SYSTEM LOG</div>
+      <div class="log-panel" id="log-panel"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const workers = [
+    { ip: '127.0.0.1',     load: 22, status: 'active', tasks: 14, port: 9090 },
+    { ip: '192.168.1.101', load: 67, status: 'warn',   tasks: 31, port: 9090 },
+  ];
+
+  let totalReqs    = 847;
+  let uptimeSeconds = 14523;
+  let activeThreads = 3;
+  let reqHistory   = [12,8,15,22,18,25,30,19,22,28,35,24];
+  let latHistory   = [42,38,55,61,48,52,45,70,58,44,50,47];
+  let connections  = [];
+  let logLines     = [];
+  let stressing    = false;
+
+  const logMessages = [
+    ['info', '[Thread 0xA3F2] New client connected. Receiving task...'],
+    ['ok',   '[Thread 0xA3F2] Checking worker 127.0.0.1 — Load: 22.4%'],
+    ['ok',   '[Thread 0xA3F2] HANDSHAKE: CMD_PROCEED → 127.0.0.1:9090'],
+    ['ok',   '[Thread 0xA3F2] File dispatched (2.4 KB). Task complete.'],
+    ['info', '[Thread 0xB81C] New client connected. Receiving task...'],
+    ['warn', '[Thread 0xB81C] Worker 192.168.1.101 load 67.3% — ABOVE THRESHOLD'],
+    ['ok',   '[Thread 0xB81C] Fallback → 127.0.0.1:9090 accepted'],
+    ['info', '[Thread 0xC44D] Client handshake initiated from 10.0.0.44'],
+    ['ok',   '[Thread 0xC44D] CMD_GET_LOAD response: 22.1% — under 50%'],
+    ['ok',   '[Thread 0xC44D] Binary task_0xC44D.bin forwarded (5.1 KB)'],
+    ['err',  '[Thread 0xD90A] All workers above 50% threshold — ABORT'],
+    ['warn', '[Thread 0xE11B] Mutex locked — queuing request'],
+    ['ok',   '[Thread 0xE11B] Mutex released. Worker acquired: 127.0.0.1'],
+    ['info', '[Balancer] Load cycle complete. Stats flushed.'],
+    ['ok',   '[Balancer] Worker 127.0.0.1 responded in 38ms'],
+  ];
+
+  function getTime() {
+    return new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+
+  function fmtUptime(s) {
+    const h   = String(Math.floor(s / 3600)).padStart(2, '0');
+    const m   = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+    const sec = String(s % 60).padStart(2, '0');
+    return `${h}:${m}:${sec}`;
+  }
+
+  function addLog(type, msg) {
+    logLines.unshift({ time: getTime(), type, msg });
+    if (logLines.length > 30) logLines.pop();
+    renderLog();
+  }
+
+  function renderLog() {
+    const panel  = document.getElementById('log-panel');
+    const tagMap = { info: 'tag-info', ok: 'tag-ok', warn: 'tag-warn', err: 'tag-err' };
+    const lblMap = { info: '[INFO]',   ok: '[OK]',   warn: '[WARN]',   err: '[ERR]' };
+    panel.innerHTML = logLines.map(l =>
+      `<div class="log-line">
+        <span class="log-time">${l.time}</span>
+        <span class="log-tag ${tagMap[l.type]}">${lblMap[l.type]}</span>
+        <span class="log-msg">${l.msg}</span>
+      </div>`
+    ).join('');
+  }
+
+  function renderWorkers() {
+    const el = document.getElementById('worker-cards');
+    el.innerHTML = workers.map(w => {
+      let cls = 'active', badge = 'ONLINE', bcls = 'badge-online', barCls = 'bar-green';
+      if (w.status === 'offline')  { cls = 'offline'; badge = 'OFFLINE';  bcls = 'badge-offline'; }
+      else if (w.load >= 75) { cls = 'danger'; badge = 'CRITICAL'; bcls = 'badge-crit';    barCls = 'bar-red'; }
+      else if (w.load >= 50) { cls = 'warn';   badge = 'BUSY';     bcls = 'badge-busy';    barCls = 'bar-amber'; }
+      return `<div class="worker-card ${cls}">
+        <div class="worker-header">
+          <span class="worker-ip">&#9675; ${w.ip}:${w.port}</span>
+          <span class="worker-badge ${bcls}">${badge}</span>
+        </div>
+        <div class="load-bar-bg">
+          <div class="load-bar-fill ${barCls}" style="width:${w.load}%"></div>
+        </div>
+        <div class="worker-stats">
+          <span>LOAD: <span class="worker-load-num">${w.load.toFixed(1)}%</span></span>
+          <span>TASKS: ${w.tasks}</span>
+          <span>PORT: ${w.port}</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  function renderThreads() {
+    const el = document.getElementById('thread-grid');
+    let html = '';
+    for (let i = 0; i < 10; i++) {
+      if (i < activeThreads) {
+        html += `<div class="thread-dot ${Math.random() > 0.5 ? 'td-active' : 'td-busy'}"></div>`;
+      } else {
+        html += `<div class="thread-dot td-idle"></div>`;
+      }
+    }
+    el.innerHTML = html;
+  }
+
+  function renderNetVisual() {
+    const el = document.getElementById('net-visual');
+    const onlineWorkers = workers.filter(w => w.status !== 'offline');
+    const dots = '<div class="flow-dots">' + '<div class="flow-dot"></div>'.repeat(5) + '</div>';
+    el.innerHTML = `
+      <div class="net-node">
+        <div class="net-icon pulse" style="color:var(--cyan)">CLI</div>
+        <div class="net-label" style="font-size:8px">:${Math.floor(40000 + Math.random() * 9999)}</div>
+      </div>
+      <div class="net-line"><div class="net-label">TCP</div>${dots}</div>
+      <div class="net-node">
+        <div class="net-icon pulse" style="color:var(--green);border-color:var(--green)">LB</div>
+        <div class="net-label" style="font-size:8px">:8080</div>
+      </div>
+      <div class="net-line"><div class="net-label">DISPATCH</div>${dots}</div>
+      <div class="net-node" style="gap:4px;">
+        ${onlineWorkers.map(w =>
+          `<div class="net-icon" style="color:${w.load > 50 ? 'var(--amber)' : 'var(--green-dim)'};border-color:${w.load > 50 ? 'var(--amber)' : 'var(--border2)'};font-size:9px;width:32px;height:26px;">W${workers.indexOf(w)+1}</div>`
+        ).join('')}
+        <div class="net-label">:9090</div>
+      </div>`;
+  }
+
+  function renderConnections() {
+    const el = document.getElementById('conn-list');
+    el.innerHTML = connections.slice(0, 4).map(c => `
+      <div class="conn-line">
+        <div class="conn-status cs-${c.state}"></div>
+        <span class="conn-ip">${c.src}</span>
+        <span class="conn-arrow">→</span>
+        <span class="conn-worker">${c.worker}</span>
+        <span class="conn-size">${c.size}</span>
+      </div>`
+    ).join('');
+  }
+
+  function renderMiniChart(id, data, warm) {
+    const el  = document.getElementById(id);
+    if (!el) return;
+    const max = Math.max(...data, 1);
+    el.innerHTML = data.map((v, i) => {
+      const h       = Math.max(2, Math.round((v / max) * 38));
+      const recent  = i >= data.length - 3;
+      return `<div class="chart-bar ${recent ? 'recent' : ''}" style="height:${h}px;${warm && recent ? 'border-top-color:var(--amber)' : ''}"></div>`;
+    }).join('');
+  }
+
+  function randomIP() {
+    return `10.0.${Math.floor(Math.random() * 5)}.${Math.floor(Math.random() * 254 + 1)}`;
+  }
+
+  function spawnConnection() {
+    const src    = randomIP();
+    const worker = workers.find(w => w.load < 50 && w.status !== 'offline');
+    const size   = `${(Math.random() * 9 + 0.5).toFixed(1)} KB`;
+    if (!worker) {
+      addLog('err', `[Balancer] All workers overloaded — rejecting ${src}`);
+      return;
+    }
+    const conn = { src, worker: worker.ip, size, state: 'active' };
+    connections.unshift(conn);
+    if (connections.length > 8) connections.pop();
+    totalReqs++;
+    worker.tasks++;
+    activeThreads = Math.min(10, activeThreads + 1);
+    const tid = '0x' + Math.floor(Math.random() * 0xFFFF).toString(16).toUpperCase();
+    addLog('info', `[Thread ${tid}] Client ${src} → Checking workers...`);
+    setTimeout(() => {
+      addLog('ok', `[Thread ${tid}] PROCEED → ${worker.ip}:9090 — File ${size}`);
+      conn.state    = 'done';
+      activeThreads = Math.max(0, activeThreads - 1);
+      renderConnections();
+      renderThreads();
+    }, 800 + Math.random() * 1200);
+  }
+
+  function addWorkerEvent() {
+    const newIP = `192.168.1.${102 + workers.length}`;
+    workers.push({ ip: newIP, load: Math.random() * 30, status: 'active', tasks: 0, port: 9090 });
+    addLog('ok', `[Balancer] New worker node ${newIP}:9090 registered`);
+    renderWorkers();
+    renderNetVisual();
+  }
+
+  function stressTest() {
+    if (stressing) return;
+    stressing = true;
+    addLog('warn', '[Balancer] STRESS TEST initiated — flooding workers');
+    let count = 0;
+    const interval = setInterval(() => {
+      workers.forEach(w => {
+        if (w.status !== 'offline') w.load = Math.min(95, w.load + Math.random() * 15);
+      });
+      spawnConnection();
+      if (++count >= 8) {
+        clearInterval(interval);
+        stressing = false;
+        addLog('info', '[Balancer] Stress test complete. Cooling down...');
+        setTimeout(() => {
+          workers.forEach(w => { w.load = Math.max(10, w.load - 30); });
+          renderWorkers();
+        }, 3000);
+      }
+    }, 300);
+  }
+
+  function tick() {
+    uptimeSeconds++;
+    document.getElementById('uptime').textContent = fmtUptime(uptimeSeconds);
+    document.getElementById('clock').textContent  = getTime();
+
+    workers.forEach(w => {
+      if (w.status !== 'offline') {
+        w.load = Math.max(5, Math.min(95, w.load + (Math.random() - 0.48) * 5));
+        w.status = w.load > 50 ? 'warn' : 'active';
+      }
+    });
+
+    if (Math.random() < 0.4) spawnConnection();
+
+    const rps = Math.floor(Math.random() * 8 + 1);
+    reqHistory.push(rps);
+    if (reqHistory.length > 16) reqHistory.shift();
+
+    const lat = Math.floor(Math.random() * 60 + 30);
+    latHistory.push(lat);
+    if (latHistory.length > 16) latHistory.shift();
+
+    document.getElementById('req-count').textContent  = totalReqs.toLocaleString();
+    document.getElementById('req-rate').textContent   = `+${rps} REQ/S`;
+    document.getElementById('thread-count').textContent = activeThreads;
+    document.getElementById('avg-ms').innerHTML       = `${lat}<span style="font-size:14px;color:var(--text-dim)">ms</span>`;
+    document.getElementById('p99-ms').textContent     = `P99: ${lat + Math.floor(Math.random() * 40 + 20)} ms`;
+
+    renderWorkers();
+    renderThreads();
+    renderNetVisual();
+    renderConnections();
+    renderMiniChart('req-chart', reqHistory, false);
+    renderMiniChart('lat-chart', latHistory, true);
+  }
+
+  // — Init —
+  for (let i = 0; i < 6; i++) {
+    const msg = logMessages[i % logMessages.length];
+    logLines.push({ time: getTime(), type: msg[0], msg: msg[1] });
+  }
+
+  connections = [
+    { src: '10.0.1.44',  worker: '127.0.0.1',     size: '2.4 KB', state: 'done' },
+    { src: '10.0.2.88',  worker: '192.168.1.101',  size: '5.1 KB', state: 'active' },
+    { src: '10.0.0.201', worker: '127.0.0.1',      size: '1.1 KB', state: 'wait' },
+  ];
+
+  renderLog();
+  renderWorkers();
+  renderThreads();
+  renderNetVisual();
+  renderConnections();
+  renderMiniChart('req-chart', reqHistory, false);
+  renderMiniChart('lat-chart', latHistory, true);
+
+  document.getElementById('req-count').textContent    = totalReqs.toLocaleString();
+  document.getElementById('thread-count').textContent = activeThreads;
+  document.getElementById('uptime').textContent       = fmtUptime(uptimeSeconds);
+
+  setInterval(tick, 1200);
+</script>
+</body>
+</html>
