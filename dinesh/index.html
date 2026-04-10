@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distributed System Monitor</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; padding: 40px; }
+        .card { background: #2d2d2d; border-radius: 8px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #444; }
+        th { color: #00ff88; }
+        .status-online { color: #00ff88; font-weight: bold; }
+        .load-bar { background: #444; height: 10px; border-radius: 5px; width: 100px; display: inline-block; }
+        .load-fill { background: #00ff88; height: 100%; border-radius: 5px; }
+        button { background: #00ff88; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>🖥️ Node Cluster Monitor</h2>
+        <button onclick="scan()">Rescan Network</button>
+        <table id="serverTable">
+            <thead>
+                <tr>
+                    <th>Server IP</th>
+                    <th>Status</th>
+                    <th>Current Tasks (Load)</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        async function updateTable() {
+            const res = await fetch('/api/servers');
+            const data = await res.json();
+            const tbody = document.querySelector('#serverTable tbody');
+            tbody.innerHTML = '';
+
+            data.forEach(s => {
+                const loadVal = parseInt(s.load) || 0;
+                const loadWidth = Math.min(loadVal * 20, 100); // Scale 5 tasks to 100%
+                
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${s.ip}</td>
+                        <td class="status-online">${s.status}</td>
+                        <td>
+                            <div class="load-bar"><div class="load-fill" style="width: ${loadWidth}%"></div></div>
+                            ${s.load} Tasks
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function scan() {
+            await fetch('/api/scan', { method: 'POST' });
+            setTimeout(updateTable, 2500);
+        }
+
+        setInterval(updateTable, 5000); // Auto-refresh every 5s
+        scan(); 
+    </script>
+</body>
+</html>
