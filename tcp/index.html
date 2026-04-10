@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P Load Balancer Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white font-sans">
+
+    <div class="max-w-4xl mx-auto p-8">
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold text-indigo-400">P2P Node Dashboard</h1>
+            <p class="text-slate-400">Decentralized Load Balancing Status</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                <h3 class="text-sm font-semibold text-slate-400 uppercase">Local Port</h3>
+                <p class="text-2xl font-mono text-indigo-300">8001</p>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                <h3 class="text-sm font-semibold text-slate-400 uppercase">Current Load</h3>
+                <div class="flex items-center gap-3">
+                    <p class="text-2xl font-mono text-emerald-400">42%</p>
+                    <div class="w-full bg-slate-700 h-2 rounded-full">
+                        <div class="bg-emerald-400 h-2 rounded-full" style="width: 42%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                <h3 class="text-sm font-semibold text-slate-400 uppercase">Active Peers</h3>
+                <p class="text-2xl font-mono text-amber-400">4</p>
+            </div>
+        </div>
+
+        <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-slate-700/50 text-slate-300 text-sm uppercase">
+                    <tr>
+                        <th class="px-6 py-4">Peer Port</th>
+                        <th class="px-6 py-4">Load</th>
+                        <th class="px-6 py-4">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-700">
+                    <tr>
+                        <td class="px-6 py-4 font-mono">8002</td>
+                        <td class="px-6 py-4">12%</td>
+                        <td class="px-6 py-4"><span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Optimal</span></td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 font-mono">8003</td>
+                        <td class="px-6 py-4">88%</td>
+                        <td class="px-6 py-4"><span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">High Load</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
