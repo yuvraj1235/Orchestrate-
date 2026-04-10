@@ -6,19 +6,24 @@ const multer = require('multer');
 const cors = require('cors');
 
 const app = express();
-app.use(cors()); // Fixes the CSP/CORS issues
+app.use(cors());
 const upload = multer({ dest: 'uploads/' });
 
 const UDP_PORT = 9091;
-const TCP_PORT = 9090;
 let routingTable = {};
 
-// 1. Listen for UDP Heartbeats from C Workers
+// 1. Listen for UDP Heartbeats
 const udpServer = dgram.createSocket('udp4');
 udpServer.on('message', (msg, rinfo) => {
     try {
-        const load = msg.readDoubleLE(0);
-        routingTable[rinfo.address] = {
+        // Match the C struct: [int32_t (4 bytes), double (8 bytes)]
+        const tcpPort = msg.readInt32LE(0);
+        const load = msg.readDoubleLE(4);
+        
+        const nodeKey = `${rinfo.address}:${tcpPort}`;
+        routingTable[nodeKey] = {
+            ip: rinfo.address,
+            port: tcpPort,
             load: load.toFixed(2),
             lastSeen: Date.now()
         };
@@ -26,64 +31,56 @@ udpServer.on('message', (msg, rinfo) => {
 });
 udpServer.bind(UDP_PORT);
 
-// Clean up dead nodes
+// Cleanup inactive nodes
 setInterval(() => {
     const now = Date.now();
-    for (let ip in routingTable) {
-        if (now - routingTable[ip].lastSeen > 10000) delete routingTable[ip];
+    for (let key in routingTable) {
+        if (now - routingTable[key].lastSeen > 8000) delete routingTable[key];
     }
-}, 5000);
-
-app.use(express.static('public'));
+}, 4000);
 
 app.get('/status', (req, res) => res.json(routingTable));
 
 app.post('/submit', upload.single('file'), (req, res) => {
     if (!req.file) return res.status(400).send("No file uploaded.");
 
-    const sourcePath = req.file.path;
-
-    // Load Balancing: Find node with minimum load
-    let bestIp = null;
+    // FIND COLD NODE (Lowest Load)
+    let bestNode = null;
     let minLoad = Infinity;
-    for (let ip in routingTable) {
-        let currentLoad = parseFloat(routingTable[ip].load);
-        if (currentLoad < minLoad) {
-            minLoad = currentLoad;
-            bestIp = ip;
+
+    for (let key in routingTable) {
+        if (parseFloat(routingTable[key].load) < minLoad) {
+            minLoad = routingTable[key].load;
+            bestNode = routingTable[key];
         }
     }
 
-    if (!bestIp) {
-        if (fs.existsSync(sourcePath)) fs.unlinkSync(sourcePath);
+    if (!bestNode) {
+        fs.unlinkSync(req.file.path);
         return res.status(500).send("No worker nodes active.");
     }
 
+    // CONNECT AND SEND
     const client = new net.Socket();
-    let output = "";
+    let result = "";
 
-    client.connect(TCP_PORT, bestIp, () => {
-        const stats = fs.statSync(sourcePath);
-        // Create 8-byte buffer for the C 'int64_t'
+    client.connect(bestNode.port, bestNode.ip, () => {
+        const stats = fs.statSync(req.file.path);
         const sizeBuf = Buffer.alloc(8);
         sizeBuf.writeBigInt64LE(BigInt(stats.size));
         client.write(sizeBuf);
-
-        const fileStream = fs.createReadStream(sourcePath);
-        fileStream.pipe(client);
+        fs.createReadStream(req.file.path).pipe(client);
     });
 
-    client.on('data', (data) => { output += data.toString(); });
-
+    client.on('data', (data) => { result += data.toString(); });
     client.on('end', () => {
-        res.send(`<h2>Result from ${bestIp} (Load: ${minLoad}%)</h2><pre>${output}</pre><br><a href="/">Back</a>`);
-        if (fs.existsSync(sourcePath)) fs.unlinkSync(sourcePath);
+        res.send(`<h3>Success!</h3><p>Executed by Node ${bestNode.port}</p><pre>${result}</pre><a href="/">Back</a>`);
+        fs.unlinkSync(req.file.path);
     });
-
     client.on('error', (err) => {
-        if (!res.headersSent) res.status(500).send("Worker Node Connection Failed.");
-        if (fs.existsSync(sourcePath)) fs.unlinkSync(sourcePath);
+        res.status(500).send("Connection to worker failed.");
+        if(fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
     });
 });
 
-app.listen(3000, () => console.log('Web Server running at http://localhost:3000'));
+app.listen(3000, () => console.log('Orchestrator: http://localhost:3000'));
